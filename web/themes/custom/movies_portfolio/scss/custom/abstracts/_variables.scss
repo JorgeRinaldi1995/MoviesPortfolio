@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+   $custom-colors: (
+    'neutral' : #ffffff, // white
+    'iron' : #E6E7E8, // light grey
+    'honey-flower' : #5A246F, // purple
+    'java' : #17BED0, // blue
+    'moss-green' : #B8D99E, // light green 1
+    'wild-willow' : #A4CE68, // medium green
+    'conifer' : #9AE56D, // light gree 2
+    'mantis' : #74BF48, // primary green
+    'chalet-green' : #537339, // dark green
+    'tango' : #F37022, // orange
+    'coral-red' : #FF3C3C, // alert
+    'silver-sand' : #BCBEC0, // medium gray 3
+    'oslo-gray' : #939598, // medium gray 2
+    'jumbo' : #6E6D71, // medium gray 1
+    'scarpa-flow' : #59595A, // dark grey 2
+    'cod-gray' : #161616, // dark grey
+  );
+  
+  :root {
+    @each $name, $color in $custom-colors {
+      --#{$name}: #{$color};
+    }
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  
+  /* ==========================================================================
+     Fonts
+     ========================================================================== */
+  
+  $font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  $font-secondary: 'Ubuntu', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  $font-tertiary: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  
+  /* ==========================================================================
+     Spacing
+     ========================================================================== */
+  
+  $base-spacing: 4em;
+  
+  $xxs: 0.1rem;
+  $xs: 0.2rem;
+  $sm: 0.3rem;
+  $md: 0.4rem;
+  $lg: 0.5rem;
+  $xl: 0.6rem;
+  $xxl: 0.7rem;
+  $xxxl: 0.8rem;
+  $xxxxl: 0.9rem;
+  $xxxxxl: 10rem;
+  
+  /**
+   * --size-1 ≡ 4px
+   * --size-2 ≡ 8px
+   * --size-3 ≡ 12px
+   * --size-4 ≡ 16px
+   * --size-5 ≡ 20px
+   * --size-6 ≡ 24px
+   * --size-7 ≡ 28px
+   * --size-8 ≡ 32px
+   * --size-9 ≡ 36px
+   * --size-10 ≡ 40px
+   */
+  :root {
+    @for $i from 1 through 10 {
+      --size-#{$i}: #{$i * 4}px;
+    }
+    --size-13: 30px;
+    --size-16: 65px;
+    --size-25: 100px;
+    --component-spacer: var(--size-13);
+  }
+  
+  
+  /* ==========================================================================
+     Measures
+     ========================================================================== */
+  
+  $global-max-width: 1185px;
+  
+  $global-font-size  : 18px;
+  $global-line-height: 1.5;
+  $global-radius     : 6px;
+  $global-module-size: 30px;
+  
+  /* ==========================================================================
+     Bootstrap vars customization
+     ========================================================================== */
+  @import "./custom/vendors/bootstrap/variables";

@@ -76,38 +76,21 @@
 {% set movie_title = elements.field_movie_title.0["#text"] %}
 {% set movie_image = node.field_movie_poster.entity.fileuri %}
 {% set movie_sypnosis = elements.field_movie_sypnosis.0["#text"] %}
-
 {% set actors_starring = elements.field_actors_starring %}
 
 <article{{ attributes.addClass(classes) }}>
-    {{ movie_title }}
-
-    <img src={{ file_url(movie_image) }}>
-     <blockquote class="movie-sypnosis">
-          {{ movie_sypnosis|raw  }}
-      </blockquote>
+    {% if movie_title %}
+        <h2>{{ movie_title }}</h2>
+    {% endif %}
+    {% if movie_image %}
+        <img src={{ file_url(movie_image) }}>
+    {% endif %}
+    {% if movie_sypnosis %}
+    <blockquote class="movie-sypnosis">
+        {{ movie_sypnosis|raw  }}
+    </blockquote>
+    {% endif %}
+    {% if actors_starring %}
       {{ actors_starring }}
-  {# <header>
-    {{ title_prefix }}
-    {% if label and not page %}
-      <h2{{ title_attributes.addClass('node__title') }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
     {% endif %}
-    {{ title_suffix }}
-    {% if display_submitted %}
-      <div class="node__meta">
-        {{ author_picture }}
-        {% block submitted %}
-          <em{{ author_attributes }}>
-            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          </em>
-        {% endblock %}
-        {{ metadata }}
-      </div>
-    {% endif %}
-  </header>
-  <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-    {{ content }}
-  </div> #}
 </article>
