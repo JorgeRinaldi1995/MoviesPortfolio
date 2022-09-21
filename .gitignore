@@ -164,7 +164,3 @@ web/themes/custom/twentynineteen/js/dist
 /web.config
 
 composer.phar
-
-# theme
-
-web/themes/custom/
