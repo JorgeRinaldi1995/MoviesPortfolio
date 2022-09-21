@@ -14,9 +14,8 @@ local.blt.yml
 web/core
 
 # Ignore paths that contain user-generated content.
-web/sites/*/files
+web/sites/*
 /files-private
-web/sites/*/private
 
 # Ignore contrib modules. These should be created during build process.
 web/modules/contrib
