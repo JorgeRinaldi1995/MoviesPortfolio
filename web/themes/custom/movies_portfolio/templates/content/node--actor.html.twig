@@ -73,31 +73,31 @@
   ]
 %}
 
-{% set movie_title = elements.field_movie_title.0["#text"] %}
-{% set movie_image = node.field_movie_poster.entity.fileuri %}
-{% set movie_sypnosis = elements.field_movie_sypnosis.0["#text"] %}
-{% set actors_starring = elements.field_actors_starring %}
+{% set actor_name = elements.field_actor_name.0["#text"] %}
+{% set actor_biography = elements.field_actor_biography.0["#text"] %}
+{% set actor_image = node.field_actor_picture.entity.fileuri %}
+{% set starred_moves = elements.field_starred_movies %}
+
 
 <article{{ attributes.addClass(classes) }}>
-
-  <aside class="image-wrapper">
-    {% if movie_image %}
-        <div style="background-image: url({{ file_url(movie_image) }})" class="internal-movie">
+  <aside class="inner-image-wrapper">
+    {% if actor_image %}
+        <div style="background-image: url({{ file_url(actor_image) }})" class="internal-movie">
         </div>
     {% endif %}
   </aside>
   <aside class="content-wrapper">
-    {% if movie_title %}
-        <h2>{{ movie_title }}</h2>
+    {% if actor_name %}
+        <h2>{{ actor_name }}</h2>
     {% endif %}
-    {% if movie_sypnosis %}
-      <blockquote class="movie-sypnosis">
-          {{ movie_sypnosis|raw  }}
+    {% if actor_biography %}
+      <blockquote class="inner-movie-sypnosis">
+          {{ actor_biography|raw  }}
       </blockquote>
     {% endif %}
 
-    {% if actors_starring %}
-        {{ actors_starring }}
+    {% if starred_moves %}
+        {{ starred_moves }}
     {% endif %}
-  </aside>  
+  </aside>   
 </article>
