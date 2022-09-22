@@ -1,3 +1,12 @@
+
+body{
+    background-color: #212121;
+}
+
+h2, h3, p, span, legend, summary, label, a{
+    color: #fff;
+}
+
 .block-movies{
     display: flex;
     flex-direction: row;
@@ -20,9 +29,9 @@
 
 .node-movie .internal-movie{
     width: 30vw;
-    height: 70vh;
+    height: 80vh;
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 .movie-view {
@@ -82,7 +91,7 @@
 
 .views-row a{
     text-decoration: none;
-    color: #171717;
+    color: #fff;
 }
 
 .view-content{
@@ -118,4 +127,45 @@
 .movie-content{
     max-width: 1440px;
     margin: 0 auto
+}
+
+.menu--main li a{
+    color: #ffffff;
+
+}
+
+#CollapsingNavbar {
+    align-items: baseline;
+}
+
+.js-form-submit {
+    background-color: #212121;
+    color: #fff;
+    border: 0px;
+    margin-left: -15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.js-form-submit:hover{
+    background-color: #484848;
+}
+
+#navbar-main {
+    background: rgb(189,0,0);
+    background: linear-gradient(90deg, rgba(189,0,0,1) 0%, rgba(139,37,37,1) 100%);
+}
+#edit-keys--2, #edit-keys{
+    padding: 5px 0.75rem;
+}
+.list-group-item{
+    background-color: transparent;
+}
+
+#edit-basic {
+    display: flex;
+}
+
+.movies-footer{
+    background: rgb(189,0,0);
+    background: linear-gradient(90deg, rgba(189,0,0,1) 0%, rgba(139,37,37,1) 100%);
 }
