@@ -7,6 +7,7 @@ global-styling:
   css:
     component:
       css/style.css: {}
+      css/index.css: {}
   dependencies:
     - core/jquery
     - core/drupal

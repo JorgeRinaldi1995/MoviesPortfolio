@@ -682,7 +682,7 @@ progress {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
-.row > * {
+/* .row > * {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -691,7 +691,7 @@ progress {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
-}
+} */
 
 .col {
   -webkit-box-flex: 1;
@@ -15110,9 +15110,7 @@ body {
 
 /* COLORS 
 --------------------------------------------------*/
-a {
-  color: #0079C0;
-}
+
 
 .bg-inverse {
   background: rgb(255, 78, 46) !important;

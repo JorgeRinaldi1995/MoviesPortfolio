@@ -63,7 +63,7 @@
 
 {%
   set classes = [
-    'node',
+    'node-movie',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
@@ -79,18 +79,25 @@
 {% set actors_starring = elements.field_actors_starring %}
 
 <article{{ attributes.addClass(classes) }}>
+
+  <aside class="image-wrapper">
+    {% if movie_image %}
+        <div style="background-image: url({{ file_url(movie_image) }})" class="movie-img">
+        </div>
+    {% endif %}
+  </aside>
+  <aside class="content-wrapper">
     {% if movie_title %}
         <h2>{{ movie_title }}</h2>
     {% endif %}
-    {% if movie_image %}
-        <img src={{ file_url(movie_image) }}>
-    {% endif %}
     {% if movie_sypnosis %}
-    <blockquote class="movie-sypnosis">
-        {{ movie_sypnosis|raw  }}
-    </blockquote>
+      <blockquote class="movie-sypnosis">
+          {{ movie_sypnosis|raw  }}
+      </blockquote>
     {% endif %}
+
     {% if actors_starring %}
-      {{ actors_starring }}
+        {{ actors_starring }}
     {% endif %}
+  </aside>  
 </article>

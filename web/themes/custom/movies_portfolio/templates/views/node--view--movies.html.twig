@@ -45,25 +45,31 @@
 {% set movie_sypnosis = node.field_movie_sypnosis.value %}
 
 
-<div{{ attributes.addClass(classes) }}>
+  <a href="{{ url }}">
+    <div{{ attributes.addClass(classes) }}>
 
-  <a href="{{ url }}">read more</a>
+        <aside class="image-wrapper">
+          {% if movie_image %}
+              <div style="background-image: url({{ file_url(movie_image) }})" class="movie-img">
+              </div>
+          {% endif %}
+        </aside>
+        <aside class="text-wrapper">
+          {% if movie_title %}
+              <h2>{{ movie_title }}</h2>
+          {% endif %}
 
-  {% if movie_title %}
-      <h2>{{ movie_title }}</h2>
-  {% endif %}
+          {% if movie_sypnosis %}
+              <blockquote class="movie-sypnosis">
+                  {{ movie_sypnosis|raw  }}
+              </blockquote>
+          {% endif %}
+        </aside>
 
-  {% if movie_image %}
-      <img src={{ file_url(movie_image) }} class="movie-img">
-  {% endif %}
-
-  {% if movie_sypnosis %}
-      <blockquote class="movie-sypnosis">
-          {{ movie_sypnosis|raw  }}
-      </blockquote>
-  {% endif %}
+    
+    </div>
+  </a>
 
   {% if pager %}
     {{ pager }}
   {% endif %}
-</div>

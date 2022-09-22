@@ -1,0 +1,155 @@
+.block-movies{
+    display: flex;
+    flex-direction: row;
+}
+
+.movie-view {
+    display: flex;
+    flex-direction: row;
+    max-width: 50vw;
+}
+
+.movie-view .image-wrapper{
+    display: flex;
+}
+
+.node-movie{
+    display: flex;
+    flex-direction: row;
+}
+
+.node-movie .image-wrapper > .movie-img{
+    width: 30vw;
+    height: 70vh;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.movie-view {
+    display: flex;
+    flex-direction: row;
+    max-width: 34vw;
+}
+
+.image-wrapper .movie-img {
+    width: 15vw;
+    height: 40vh;
+    background-size: cover;
+    background-position: bottom;
+}
+
+/* @media (min-width: 1650px){
+    
+    
+}
+
+@media (min-width: 1880px){
+    .movie-view {
+        display: flex;
+        flex-direction: row;
+        max-width: 28vw;
+    }
+
+    .image-wrapper .movie-img {
+        width: 16vw;
+        height: 42vh;
+        background-size: cover;
+        background-position: bottom;
+    }
+    
+}
+
+@media (min-width: 87.5rem){
+
+    .movie-view {
+        display: flex;
+        flex-direction: row;
+        max-width: 40vw;
+    }
+
+    .image-wrapper .movie-img {
+        width: 15vw;
+        height: 38vh;
+        background-size: cover;
+        background-position: bottom;
+    }
+}
+
+@media (max-width: 1650px){
+    .image-wrapper .movie-img {
+        width: 20vw;
+        height: 47vh;
+        background-size: cover;
+        background-position: bottom;
+    }
+} */
+
+.node-movie .content-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+}
+
+.node-movie .content-wrapper h2{
+    font-size: 4rem;
+}
+
+.movie-view .text-wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.movie-view .movie-sypnosis p{
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+
+
+.views-row{
+    max-width: 50%;
+    padding: 10px;
+}
+
+.views-row a{
+    text-decoration: none;
+    color: #171717;
+}
+
+.view-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+@media (max-width: 520px){
+    .view-content{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .movie-view {
+        display: flex;
+        flex-direction: column;
+        max-width: initial;
+    }
+    .views-row{
+        max-width: initial;
+        padding: 10px;
+    }
+    .image-wrapper .movie-img {
+        width: 94vw;
+        height: 53vh;
+        background-size: cover;
+        background-position: bottom;
+    }
+    
+}
+
+.movie-content{
+    max-width: 1440px;
+    margin: 0 auto
+}
