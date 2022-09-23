@@ -1,0 +1,24 @@
+.c-movies-navbar{
+    background-color: var(--yellow);
+    .nav-item a{
+        color: var(--dark);
+    }
+    #CollapsingNavbar{
+        align-items: baseline;
+    }
+    .c-search-button{
+        background-color: var(--dark);
+        color: var(--neutral);
+        height: 38px;
+        border: 0;
+        margin-left: -20px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .navbar-brand span{
+        font-family: $font-primary;
+        font-size: 43px;
+        padding-left: 30px;
+        font-style: italic;
+    }
+}

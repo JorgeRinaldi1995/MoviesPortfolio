@@ -32,45 +32,64 @@
 #}
 {%
   set classes = [
-    'c-view-listing',
-    'movie-view',
-    'movie-view-' ~ id|clean_class,
-    'movie-view-id-' ~ id,
-    'movie-view-display-id-' ~ display_id,
-    dom_id ? 'js-movie-view-dom-id-' ~ dom_id,
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-
-{% set movie_title = node.field_movie_title.value %}
-{% set movie_image = node.field_movie_poster.entity.fileuri %}
-{% set movie_sypnosis = node.field_movie_sypnosis.value %}
-
-
-  <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
-    <div{{ attributes.addClass(classes) }}>
-
-        <aside class="c-view-listing__left-column">
-          {% if movie_image %}
-              <div style="background-image: url({{ file_url(movie_image) }})" class="c-view-listing__picture">
-              </div>
-          {% endif %}
-        </aside>
-        <aside class="c-view-listing__right-column">
-          {% if movie_title %}
-              <h2 class="c-view-listing__title">{{ movie_title }}</h2>
-          {% endif %}
-
-          {% if movie_sypnosis %}
-              <blockquote class="c-view-listing__description">
-                  {{ movie_sypnosis|raw  }}
-              </blockquote>
-          {% endif %}
-        </aside>
-
-    
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
     </div>
-  </a>
+  {% endif %}
+  {% if exposed %}
+    <div class="view-filters">
+      {{ exposed }}
+    </div>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  {% if rows %}
+    <div class="view-content">
+      {{ rows }}
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
 
   {% if pager %}
     {{ pager }}
   {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

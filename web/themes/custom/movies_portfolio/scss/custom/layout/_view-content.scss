@@ -1,0 +1,23 @@
+
+.breadcrumb{
+    a{
+        color: var(--neutral);
+    }
+}
+
+.view-content {
+    @include breakpoint(not_mobile) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        
+    }
+    .views-row {
+        @include breakpoint(not_mobile) {
+            flex: 50%; 
+        }
+    }
+}
