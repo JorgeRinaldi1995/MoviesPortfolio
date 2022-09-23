@@ -71,31 +71,14 @@
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       {% block head %}
-        {# {% if page.secondary_menu or page.top_header or page.top_header_form %}
-          <nav{{ navbar_top_attributes }}>
-          {% if container_navbar %}
-          <div class="container">
-          {% endif %}
-              {{ page.secondary_menu }}
-              {{ page.top_header }}
-              {% if page.top_header_form %}
-                <div class="form-inline navbar-form ms-auto">
-                  {{ page.top_header_form }}
-                </div>
-              {% endif %}
-          {% if container_navbar %}
-          </div>
-          {% endif %}
-          </nav>
-        {% endif %} #}
-        <nav{{ navbar_attributes }}>
+        <nav class="c-movies-navbar navbar navbar-expand-lg" id="navbar-main">
           {% if container_navbar %}
           <div class="container">
           {% endif %}
             {{ page.header }}
             {% if page.primary_menu or page.header_form %}
               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
+              <div class="collapse navbar-collapse justify-content-end" id="CollapsingNavbar">
                 {% if navbar_offcanvas %}
                   <div class="offcanvas-header">
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

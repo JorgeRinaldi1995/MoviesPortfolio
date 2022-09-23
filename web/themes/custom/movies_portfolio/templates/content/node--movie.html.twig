@@ -63,6 +63,7 @@
 
 {%
   set classes = [
+    'c-inner-page',
     'node-movie',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -80,24 +81,25 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  <aside class="image-wrapper">
+  <aside class="c-inner-page__left-column">
     {% if movie_image %}
-        <div style="background-image: url({{ file_url(movie_image) }})" class="internal-movie">
+        <div style="background-image: url({{ file_url(movie_image) }})" class="c-inner-page__picture">
         </div>
     {% endif %}
   </aside>
-  <aside class="content-wrapper">
+  <aside class="c-inner-page__right-column">
     {% if movie_title %}
-        <h2>{{ movie_title }}</h2>
+        <h2 class="c-inner-page__title">{{ movie_title }}</h2>
     {% endif %}
     {% if movie_sypnosis %}
-      <blockquote class="movie-sypnosis">
+      <blockquote class="c-inner-page__description">
           {{ movie_sypnosis|raw  }}
       </blockquote>
     {% endif %}
-
+  <div class="c-inner-page__listing">
     {% if actors_starring %}
         {{ actors_starring }}
     {% endif %}
+  </div>  
   </aside>  
 </article>

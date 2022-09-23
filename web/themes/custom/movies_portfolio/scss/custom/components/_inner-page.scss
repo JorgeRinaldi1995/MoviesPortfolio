@@ -1,0 +1,48 @@
+.c-inner-page {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(not_mobile) {
+        flex-direction: row;
+    }
+    .c-inner-page__left-column{
+        display: flex;
+        justify-content: center;
+    }
+    .c-inner-page__right-column{
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(not_mobile) {
+            padding: 0 40px;
+        }
+    }
+    .c-inner-page__title{
+        color: var(--neutral);
+        margin-top: 20px;
+        @include breakpoint(not_mobile) {
+            margin-top: 0;
+        }
+    }
+    .c-inner-page__picture{
+        padding: 200px 150px;
+        background-size: cover;
+        background-position: center;
+    }
+    .c-inner-page__description{
+        color: var(--neutral)
+    }
+    .c-inner-page__listing h3{
+        color: var(--neutral);
+        margin-bottom: 10px;
+    }
+    .c-inner-page__listing a{
+        color: var(--neutral);
+    }
+    
+}
+
+
+
+
+
+
+

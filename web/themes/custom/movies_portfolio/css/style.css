@@ -15105,7 +15105,7 @@ body.path-user .field--label-above .field__item {
 /* GENERAL STYLES
 -------------------------------------------------*/
 body {
-  background: #fff;
+  background: var(--bs-gray-dark);
 }
 
 /* COLORS 
